@@ -1,33 +1,7 @@
 spring:
   config:
     import: optional:configtree:/etc/secrets/,optional:configtree:./secrets/
-  kafka:
-    bootstrap-servers: ${BOOTSTRAP_SERVERS}
-    ssl-key-password: ${KAFKA_SSL_PASSWORD}
-    ssl-cert-location: /etc/secrets/kafka_cert.jks
-    enable-ssl: ${KAFKA_ENABLE_SSL}
-    consumer:
-      retries: 3
-      group-id: spring-boot-kafka-consumer-sample
-      enable-auto-commit: false
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      topic: sample-topic
-  datasource:
-    url: jdbc:h2:mem:testdb
-    driver-class-name: org.h2.Driver
-    username: sa
-    password: password
-    platform: h2
-  jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
-    defer-datasource-initialization: true
-    hibernate:
-      ddl-auto: create
-  h2:
-    console:
-      enabled: true
-      path: /h2-console
+
 management:
   endpoints:
     web:
@@ -55,15 +29,3 @@ management:
       enabled: true
     elasticsearch:
       enabled: false
-springdoc:
-  api-docs:
-    enabled: true
-  swagger-ui:
-    path: /swagger.html
-    enabled: true
-    disable-swagger-default-url: true
-    config:
-      title: Example API
-      version: v1
-server:
-  port: 8081
