@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: sample-5
-          image: starter-service/sample-5:latest
+          image: shikhara1022/sample-5:latest
           ports:
             - containerPort: 8080
           env:
