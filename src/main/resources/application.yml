@@ -1,6 +1,18 @@
 spring:
   config:
     import: optional:configtree:/etc/secrets/,optional:configtree:./secrets/
+  kafka:
+    bootstrap-servers: ${BOOTSTRAP_SERVERS}
+    ssl-key-password: ${KAFKA_SSL_PASSWORD}
+    ssl-cert-location: /etc/secrets/kafka_cert.jks
+    enable-ssl: ${KAFKA_ENABLE_SSL}
+    consumer:
+      retries: 3
+      group-id: spring-boot-kafka-consumer-sample
+      enable-auto-commit: false
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      topic: sample-topic
 management:
   endpoints:
     web:
