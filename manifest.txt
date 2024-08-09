@@ -74,6 +74,7 @@ README.md
 .git/objects/df/7e9cbb18150f65b2e724704ef9a145a6b865e0
 .git/objects/df/db09b40b5cde986989dbbf4d5a6250b6aba868
 .git/objects/a2/37bbfea4cd03217e92e7210785b2310ad57acc
+.git/objects/a5/bdcfd4002b30fbb18bad6c70a19da1c636af85
 .git/objects/a5/e39126b227f5a4d06089be4fc94ef378fbc312
 .git/objects/bd/02a8db058fa315c6cfbb85c987f0db8d53ee3d
 .git/objects/d1/4a7c559350f6b75a41bb6e79a5cc11f3a3a8c9
@@ -95,6 +96,7 @@ README.md
 .git/objects/c0/b160e9a01cffe1cd6e7a8da27bae57f54ab5b0
 .git/objects/ee/3d6d9f94d68ac21e586b15536217ce5757f52a
 .git/objects/fc/5ba5be55852a562500f947c47916852e42e332
+.git/objects/fc/4662d71ea404175ec312de8df56b8d7c8d3ac5
 .git/objects/fd/e3e7c1c7864a1b97cf5b8e3811d9b12f8c19ee
 .git/objects/fd/b2cf2c6d2a8b1bf1b7ff3a97076db037bd202e
 .git/objects/fd/92f91b96c395f573e809fa222431d9b0506239
@@ -236,6 +238,7 @@ README.md
 .git/objects/f7/16735eeb53d3bc8d68c9938bea501fc7dd3058
 .git/objects/fa/15fbb09da31d4e65551e9fa40ca20a545f8a19
 .git/objects/fa/ce6b69c26b9defe5b649141a479f8d2e239f8f
+.git/objects/ff/4cbabf415143608d741078c660236817b2d864
 .git/objects/ff/99018d21be5fe11251764191b1ea7feb7b882a
 .git/objects/f6/d5e7b87e92ae8782a1dc23ec5f425670dc943c
 .git/objects/e9/7fc234c550bc16292c88e32af2629742755d73
@@ -304,7 +307,6 @@ README.md
 .git/refs/heads/main
 .git/refs/remotes/origin/main
 .git/index
-.git/config.lock
 .git/COMMIT_EDITMSG
 .git/FETCH_HEAD
 SECURITY.md
