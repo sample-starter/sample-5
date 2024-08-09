@@ -1,95 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>org.sample</groupId>
-  <artifactId>sample-5</artifactId>
+  <groupId>org.example</groupId>
+  <artifactId>java-paved-road</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <name>sample-5</name>
-  <description>string</description>
-  <packaging>jar</packaging>
+  <packaging>pom</packaging>
+  <modules>
+    <module>starter-kafka</module>
+    <module>starter-kit</module>
+    <module>starter-api</module>
+    <module>starter-common</module>
+    <module>starter-cicd</module>
+    <module>starter-sql</module>
+  </modules>
+  <!-- Sets this project as SpringBoot project -->
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
     <version>2.6.6</version>
   </parent>
   <properties>
-    <java.version>17</java.version>
-    <version.jacoco>0.8.8</version.jacoco>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <version.maven.surefire.junit>3.0.0-M8</version.maven.surefire.junit>
-    <version.maven.plugin.failsafe>3.0.0-M8</version.maven.plugin.failsafe>
-    <version.maven.plugin.checkstyle>3.1.2</version.maven.plugin.checkstyle>
+    <java.version>17</java.version>
+    <version.jacoco>0.8.11</version.jacoco>
     <org.projectlombok.version>1.18.32</org.projectlombok.version>
     <maven.surefire.version>2.22.2</maven.surefire.version>
-    <!-- For testing -->
-    <version.junit-jupiter>5.9.1</version.junit-jupiter>
-    <skip.unit.tests>false</skip.unit.tests>
-    <skip.it.tests>false</skip.it.tests>
-    <!-- Sonarqube configuration -->
-    <sonar.exclusions>**/common/config/*.java,
-            **/common/health/*.java,
-            **/common/security/*.java,
-            **/common/util/*.java,
-            **/exceptions/*.java,
-            **/services/impl/*.java,
-            **/models/*.java,
-            **/dto/*.java,
-            **/dto/exceptions/*.java,
-            **/Application.java</sonar.exclusions>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   <dependencies>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-logging</artifactId>
-      <exclusions>
-        <exclusion>
-          <groupId>org.apache.logging.log4j</groupId>
-          <artifactId>log4j-api</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>net.logstash.logback</groupId>
-      <artifactId>logstash-logback-encoder</artifactId>
-      <version>7.0.1</version>
-    </dependency>
-    <!-- Unit test dependencies starts -->
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-test</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter</artifactId>
-      <version>${version.junit-jupiter}</version>
-      <scope>test</scope>
-    </dependency>
-    <!-- Project based dependencies starts -->
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-text</artifactId>
-      <version>1.10.0</version>
-    </dependency>
-    <!-- AOP -->
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-aop</artifactId>
-    </dependency>
-    <!-- Actuator -->
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-actuator</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.security</groupId>
-      <artifactId>spring-security-web</artifactId>
-    </dependency>
     <!-- Jackson -->
-    <dependency>
-      <groupId>com.fasterxml.jackson.dataformat</groupId>
-      <artifactId>jackson-dataformat-yaml</artifactId>
-    </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-annotations</artifactId>
@@ -104,6 +47,38 @@
       <artifactId>jakarta.servlet-api</artifactId>
       <version>6.0.0</version>
     </dependency>
+    <!--        <dependency>-->
+    <!--            <groupId>org.apache.httpcomponents.client5</groupId>-->
+    <!--            <artifactId>httpclient5</artifactId>-->
+    <!--            <version>5.3.1</version>-->
+    <!--        </dependency>-->
+    <dependency>
+      <groupId>com.nimbusds</groupId>
+      <artifactId>nimbus-jose-jwt</artifactId>
+      <version>9.38</version>
+    </dependency>
+    <dependency>
+      <groupId>net.logstash.logback</groupId>
+      <artifactId>logstash-logback-encoder</artifactId>
+      <version>7.0.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.30</version>
+      <scope>provided</scope>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>2.16.1</version>
+    </dependency>
+    <!-- Kafka -->
+    <dependency>
+      <groupId>org.springframework.kafka</groupId>
+      <artifactId>spring-kafka</artifactId>
+    </dependency>
     <!--Micrometer Prometheus -->
     <dependency>
       <groupId>io.micrometer</groupId>
@@ -113,19 +88,34 @@
       <artifactId>micrometer-core</artifactId>
       <groupId>io.micrometer</groupId>
     </dependency>
+    <!-- Actuator -->
     <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <version>${org.projectlombok.version}</version>
-      <scope>provided</scope>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-actuator</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.nimbusds</groupId>
-      <artifactId>nimbus-jose-jwt</artifactId>
-      <version>9.38</version>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-web</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springdoc</groupId>
+      <artifactId>springdoc-openapi-ui</artifactId>
+      <version>1.7.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springdoc</groupId>
+      <artifactId>springdoc-openapi-security</artifactId>
+      <version>1.7.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-devtools</artifactId>
     </dependency>
   </dependencies>
-  <!--ORG level distribution Management -->
   <distributionManagement>
     <repository>
       <id>af-release</id>
@@ -196,34 +186,6 @@
         <plugin>
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.1.1</version>
-        </plugin>
-        <plugin>
-          <groupId>org.jacoco</groupId>
-          <artifactId>jacoco-maven-plugin</artifactId>
-          <version>${version.jacoco}</version>
-          <configuration>
-            <propertyName>coverageAgent</propertyName>
-            <append>true</append>
-          </configuration>
-          <executions>
-            <execution>
-              <id>pre-unit-test</id>
-              <goals>
-                <goal>prepare-agent</goal>
-              </goals>
-              <configuration>
-                <propertyName>surefireArgLine</propertyName>
-                <append>true</append>
-              </configuration>
-            </execution>
-            <execution>
-              <id>post-unit-test</id>
-              <phase>test</phase>
-              <goals>
-                <goal>report</goal>
-              </goals>
-            </execution>
-          </executions>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
