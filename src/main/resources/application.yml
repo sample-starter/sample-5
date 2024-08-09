@@ -1,7 +1,6 @@
 spring:
   config:
     import: optional:configtree:/etc/secrets/,optional:configtree:./secrets/
-
 management:
   endpoints:
     web:
@@ -29,3 +28,13 @@ management:
       enabled: true
     elasticsearch:
       enabled: false
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    path: /swagger.html
+    enabled: true
+    disable-swagger-default-url: true
+    config:
+      title: Example API
+      version: v1
